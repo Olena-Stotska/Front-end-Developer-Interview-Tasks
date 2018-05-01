@@ -12,7 +12,7 @@ I picked up a few tasks for you, which will help you to get ready to interview.
 
 1. Write functions `some` & `every` which work as functions `Array.prototype.some` and `Array.prototype.every`
 
-    ```
+    ```js
     console.log(every([NaN, NaN, NaN], isNaN)) //true
     console.log(every([NaN, NaN, 4], isNaN)) //false
     console.log(some([NaN, 3, 4], isNaN)) //true
