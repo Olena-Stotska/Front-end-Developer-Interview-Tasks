@@ -4,9 +4,19 @@ This file contains tasks Front-End interview.
 
 I hope, these tasks help fresh developers prepare to interview and for interviewer find potential candidates.
 
+## Tasks on Number
+
+1. Write functions `isPrime()`, when return `true` or `false` if number is prime
+
+    ```js
+    console.log(isPrime(11)) //true
+
+    ```
+-----------------------------------------------------------------------------
+
 ## Tasks on Array
 
-1. Write functions `some` & `every` which work as functions `Array.prototype.some` and `Array.prototype.every`
+1. Write functions `some()` & `every()` which work as functions `Array.prototype.some()` and `Array.prototype.every()`
 
     ```js
     console.log(every([NaN, NaN, NaN], isNaN)) //true
