@@ -12,7 +12,7 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     console.log(isPrime(11)) //true
 
     ```
------------------------------------------------------------------------------
+----
 
 ## Tasks on Array
 
