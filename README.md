@@ -42,7 +42,13 @@ I hope, these tasks help fresh developers prepare to interview and for interview
 2. Write a function `groupItems()`, which returns an object with keys `even` & `odd` and values are arrays with corresponding numbers
 
   ```js
-  console.log(groupItems([100, 2, 3, 4, 5, 1, 6, 7, 11])) // { even: [100, 2, 4, 6], odd: [3, 5, 1, 7, 11] }
+  console.log(groupItems([100, 3, 4, 5, 1, 6, 7])) // { even: [100, 4, 6], odd: [3, 5, 1, 7] }
+  ```
+
+3. Write a function `reduce()`, which work as function `Array.prototype.reduce()`, and find sum in array `const items = [1,2,3,4,5,6,7,8,9]`
+
+  ```js
+  console.log(reduce(items)) // 45
   ```
 
 ----
