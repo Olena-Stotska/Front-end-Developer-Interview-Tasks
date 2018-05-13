@@ -51,4 +51,31 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   console.log(reduce(items)) // 45
   ```
 
+4. Write a function that removes duplicate values from an array.
+
+  ```js
+  removeDuplicates([1, 3, 7, 1, 3, 9, 8, 7]) // [1, 3, 7, 9, 8]
+  ```
+
+5.  Write a function that returns the common values of two arrays.
+
+  ```js
+  commonValues([3, 4, 6, 3, 1], [5, 10, 7, 1, 3, 9, 8, 7]) // [3, 1]
+  ```
+
+6. Write a function that returns the distinct values of two arrays.
+
+  ```js
+  distinctValues([3, 4, 6, 3, 1], [5, 10, 7, 1, 3, 9, 8, 7]) // [4, 6, 5, 10, 9, 8]
+  ```
+
+7. Write a function which creates an array with defined size and fills it with random values
+
+  ```js
+  function generateArr(arrSize) {...}
+  ```
+
+8. Write your own implementation of Array.prototype.includes() method.
+
 ----
+
