@@ -26,6 +26,12 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   console.log(fibonacci(9)) // 21
   ```
 
+4. Write a function `findNextSquare(sq)`, which return the square of the next number and -1, if  the square root of a number is not an integer
+  ```js
+  console.log(findNextSquare(144)) // 169
+  console.log(findNextSquare(155)) // -1 because sqrt(155) = 12.44... (not integer number)
+  ```
+
 ----
 
 ## Tasks on Array
