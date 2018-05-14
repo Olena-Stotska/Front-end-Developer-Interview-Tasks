@@ -94,6 +94,11 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   ```js
   const users = [{ name: 'John', age: 10 }, { name: 'Peter', age: 12 }, { name: 'Serjio', age: 16 }]
   ```
+11. Write a function `map()`, with 2 arguments (array & callback), which work as function `Array.prototype.map()`, and return result `element * index`
 
+  ```js
+  console.log(map([1,2,3,4,5,6,7,8,9,10],
+                  (element, index, array) => element * index)) // [0, 2, 6, 12, 20, 30, 42, 56, 72, 90]
+  ```
 ----
 
