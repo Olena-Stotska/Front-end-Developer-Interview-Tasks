@@ -66,7 +66,7 @@ I hope, these tasks help fresh developers prepare to interview and for interview
 6. Write a function that returns the distinct values of two arrays.
 
   ```js
-  console.log(distinctValues([3, 4, 6, 3, 1], [5, 10, 7, 1, 3, 9, 8, 7])) // [4, 6, 5, 10, 9, 8]
+  console.log(distinctValues([3, 4, 6, 3, 1], [5, 10, 7, 1, 3, 9, 8, 7])) // [4, 6, 5, 10, 7, 9, 8]
   ```
 
 7. Write a function which creates an array with defined size and fills it with random values.
