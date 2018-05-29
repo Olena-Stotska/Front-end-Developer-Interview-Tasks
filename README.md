@@ -100,5 +100,95 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   console.log(map([1,2,3,4,5,6,7,8,9,10],
                   (element, index, array) => element * index)) // [0, 2, 6, 12, 20, 30, 42, 56, 72, 90]
   ```
+
+  ---
+
+  ## Tasks on DOM
+
+1. Write a function which finds the red bordered node from "structure-1" in "structure-2" (set it the same border) eventually this function should be able to find any mirrored node specified in structure-1
+
+  ```html
+    <div id="structure-1">
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div style="border: 3px solid red"></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+
+    <div id="structure-2">
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+  ```
+
+```css
+  body {
+    display: flex;
+  }
+
+  #structure-1,
+  #structure-2 {
+    border: 3px solid blue;
+    width: 200px;
+    margin-right: 50px;
+  }
+  #structure-1 div,
+  #structure-2 div {
+    min-height: 20px;
+  }
+  #structure-1 div:empty,
+  #structure-2 div:empty {
+    background: purple;
+  }
+  #structure-1 > div,
+  #structure-2 > div {
+    border: 1px solid #fff;
+    margin: 5px;
+  }
+  #structure-1 > div > div:first-child,
+  #structure-2 > div > div:first-child {
+    background: #23d6af;
+  }
+  #structure-1 > div > div:nth-of-type(2),
+  #structure-2 > div > div:nth-of-type(2) {
+    background: black;
+  }
+  #structure-1 > div > div:nth-of-type(3),
+  #structure-2 > div > div:nth-of-type(3) {
+    background: green;
+  }
+
+  #structure-2 {
+    border-color: lime;
+  }
+```
 ----
 
