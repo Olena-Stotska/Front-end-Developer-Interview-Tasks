@@ -100,6 +100,49 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   console.log(map([1,2,3,4,5,6,7,8,9,10],
                   (element, index, array) => element * index)) // [0, 2, 6, 12, 20, 30, 42, 56, 72, 90]
   ```
+12. Write a function `createPhoneNumber()` that return phone number.
+
+  ```js
+  console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) // "(123) 456-7890"
+  ```
+
+13. Write a function `groupBy(items, callback)`, which groups the elements by property.
+
+  ```js
+  console.log(groupBy([
+  {
+    firstName: 'Jhon',
+    lastName: 'Dou',
+    birthYear: 1989,
+    isActive: false
+  },
+  {
+    firstName: 'Harry',
+    lastName: 'Potter',
+    birthYear: 1989,
+    isActive: false
+  },
+  {
+    firstName: 'Alan',
+    lastName: 'Rickman',
+    birthYear: 1994,
+    isActive: false,
+  },
+  {
+    firstName: 'Somebody',
+    lastName: 'Else',
+    birthYear: 1989,
+    isActive: true,
+  },
+  {
+    firstName: 'Somebody',
+    lastName: 'Man',
+    birthYear: 1994,
+    isActive: true,
+  },
+  ], (item, index, array) => [item.isActive])) // { false: [{…}, {…}, {…}]
+                                                    true: [{…}, {…}] }
+  ```
 
   ---
 
