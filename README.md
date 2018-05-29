@@ -140,8 +140,7 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     birthYear: 1994,
     isActive: true,
   },
-  ], (item, index, array) => [item.isActive])) // { false: [{…}, {…}, {…}]
-                                                    true: [{…}, {…}] }
+  ], (item, index, array) => [item.isActive])) // { false: [{…}, {…}, {…}], true: [{…}, {…}] }
   ```
 
   ---
