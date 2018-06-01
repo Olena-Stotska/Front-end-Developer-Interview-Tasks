@@ -283,3 +283,13 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     var fakePoint = YOUR_CODE_HERE
     console.log(fakePoint instanceof Point)
   ```
+  5. Singleton. Add a get method to the ids object, which returns the next id and increments its next counter. Use the short method syntax.
+
+  ```js
+    let ids = {
+      next: 0
+    }
+
+    console.log(ids.get()) // 0
+    console.log(ids.get()) // 1
+  ```
