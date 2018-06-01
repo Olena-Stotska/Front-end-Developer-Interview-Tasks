@@ -274,16 +274,12 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   Refactor the code to use a getter (get verb() { ... }) instead of an instance property.
 
   4. Fake point. Use a single object literal to create an object that is indistinguishable from a Point instance, without calling the Point constructor.
-  ```js
-  class Point {
-  constructor(x, y) {
-    this.x = x, this.y = y
-  }
-  add(other) {
-    return new Point(this.x + other.x, this.y + other.y)
-  }
-}
 
-var fakePoint = YOUR_CODE_HERE
-console.log(fakePoint instanceof Point)
+  ```js
+    class Point {
+      YOUR_CODE_HERE
+    }
+
+    var fakePoint = YOUR_CODE_HERE
+    console.log(fakePoint instanceof Point)
   ```
