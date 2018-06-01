@@ -191,56 +191,81 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     </div>
   ```
 
-```css
-  body {
-    display: flex;
-  }
+  ```css
+    body {
+      display: flex;
+    }
 
-  #structure-1,
-  #structure-2 {
-    border: 3px solid blue;
-    width: 200px;
-    margin-right: 50px;
-  }
-  #structure-1 div,
-  #structure-2 div {
-    min-height: 20px;
-  }
-  #structure-1 div:empty,
-  #structure-2 div:empty {
-    background: purple;
-  }
-  #structure-1 > div,
-  #structure-2 > div {
-    border: 1px solid #fff;
-    margin: 5px;
-  }
-  #structure-1 > div > div:first-child,
-  #structure-2 > div > div:first-child {
-    background: #23d6af;
-  }
-  #structure-1 > div > div:nth-of-type(2),
-  #structure-2 > div > div:nth-of-type(2) {
-    background: black;
-  }
-  #structure-1 > div > div:nth-of-type(3),
-  #structure-2 > div > div:nth-of-type(3) {
-    background: green;
-  }
+    #structure-1,
+    #structure-2 {
+      border: 3px solid blue;
+      width: 200px;
+      margin-right: 50px;
+    }
+    #structure-1 div,
+    #structure-2 div {
+      min-height: 20px;
+    }
+    #structure-1 div:empty,
+    #structure-2 div:empty {
+      background: purple;
+    }
+    #structure-1 > div,
+    #structure-2 > div {
+      border: 1px solid #fff;
+      margin: 5px;
+    }
+    #structure-1 > div > div:first-child,
+    #structure-2 > div > div:first-child {
+      background: #23d6af;
+    }
+    #structure-1 > div > div:nth-of-type(2),
+    #structure-2 > div > div:nth-of-type(2) {
+      background: black;
+    }
+    #structure-1 > div > div:nth-of-type(3),
+    #structure-2 > div > div:nth-of-type(3) {
+      background: green;
+    }
 
-  #structure-2 {
-    border-color: lime;
-  }
-```
+    #structure-2 {
+      border-color: lime;
+    }
+  ```
   ---
 
   ## Tasks on ES6
 
-  1. Write a class called Point, which represents a point in two-dimensional space. A point has x and y properties, given as arguments to its constructor.
-  It also has a single method plus, which takes another point and returns the sum of the two points, that is, a new point whose x is the sum of the x properties of the two original points, and whose y is the sum of their y properties.
+  1. Write a class called Point, which represents a point in two-dimensional space. A point has x and y properties, given
+  as arguments to its constructor. It also has a single method plus, which takes another point and returns the sum of the two points,
+  that is, a new point whose x is the sum of the x properties of the two original points, and whose y is the sum of their y properties.
 
   ```js
-  console.log(new Point(1, 2).plus(new Point(2, 1))) // Point{x: 3, y: 3}
+    console.log(new Point(1, 2).plus(new Point(2, 1))) // Point{x: 3, y: 3}
   ```
 
-  2.
+  2. Speaker upgrade. Rewrite these two object types to use the class keyword, instead of direct prototype manipulation.
+  Speaker is a simple type that exposes a speak method which, when called, logs the given text along with the speaker's name.
+  Shouter is a subtype of Speaker which shouts its text and makes it uppercase.
+
+  ```js
+    function Speaker(name, verb) {
+      this.name = name
+      this.verb = verb || "says"
+    }
+
+    Speaker.prototype.speak = function(text) {
+      console.log(this.name + " " + this.verb + " '" + text + "'")
+    }
+
+    function Shouter(name) {
+      Speaker.call(this, name, "shouts")
+    }
+
+    Shouter.prototype = Object.create(Speaker.prototype)
+    Shouter.prototype.speak = function(text) {
+      Speaker.prototype.speak.call(this, text.toUpperCase())
+    }
+
+    new Shouter("Dr. Loudmouth").speak("hello there")
+  ```
