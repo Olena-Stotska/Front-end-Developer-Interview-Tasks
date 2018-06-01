@@ -269,3 +269,21 @@ I hope, these tasks help fresh developers prepare to interview and for interview
 
     new Shouter("Dr. Loudmouth").speak("hello there")
   ```
+
+  3. Getters. The way the verb property is set per instance rather than per class is kind of awkward.
+  Refactor the code to use a getter (get verb() { ... }) instead of an instance property.
+
+  4. Fake point. Use a single object literal to create an object that is indistinguishable from a Point instance, without calling the Point constructor.
+  ```js
+  class Point {
+  constructor(x, y) {
+    this.x = x, this.y = y
+  }
+  add(other) {
+    return new Point(this.x + other.x, this.y + other.y)
+  }
+}
+
+var fakePoint = YOUR_CODE_HERE
+console.log(fakePoint instanceof Point)
+  ```
