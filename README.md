@@ -293,3 +293,16 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     console.log(ids.get()) // 0
     console.log(ids.get()) // 1
   ```
+  6. Constant non-constance
+  Does the fact that account is constant mean that we can't update password? Why, or why not? And if not, how could we make it so that we can't?
+
+  ```js
+  const account = {
+    username: "marijn",
+    password: "xyzzy"
+  }
+
+  account.password = "s3cret" // (*much* more secure)
+
+  console.log(account.password)
+  ```
