@@ -52,7 +52,8 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   console.log(groupItems([100, 3, 4, 5, 1, 6, 7])) // { even: [100, 4, 6], odd: [3, 5, 1, 7] }
   ```
 
-3. Write a function `reduce()`, which work as function `Array.prototype.reduce()`, and find sum in array `const items = [1,2,3,4,5,6,7,8,9]`
+3. Write a function `reduce()`, which work as function `Array.prototype.reduce()`, and find sum in array
+   `const items = [1,2,3,4,5,6,7,8,9]`
 
   ```js
   console.log(reduce(items)) // 45
@@ -162,15 +163,16 @@ I hope, these tasks help fresh developers prepare to interview and for interview
     ```
 
   15. Sorted array
-    The code for this exercise implements a wrapper for working with sorted arrays.
+
+      The code for this exercise implements a wrapper for working with sorted arrays.
     Its constructor takes a comparison function that compares two elements and returns a number,
     negative if the first is less than the second, zero when they are equal,
     and positive otherwise (similar to what the sort method on arrays expects).
-
     Rewrite the code to use an ES6 class. Then, rewrite the loop to use the ES6 array method findIndex,
     which is like indexOf, but takes a function instead of an element as argument,
     and returns the index of the first element for which that function returns true (or returns -1 if no such element was found).
     For example [1, 2, 3].findIndex(x => x > 1) yields 1. Use arrow functions for all function expressions.
+
 
     ```js
       function SortedArray(compare) {
@@ -196,7 +198,6 @@ I hope, these tasks help fresh developers prepare to interview and for interview
       sorted.insert(4)
       sorted.insert(3)
       console.log("array:", sorted.content)
-
     ```
   ---
 
