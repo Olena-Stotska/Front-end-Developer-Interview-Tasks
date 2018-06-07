@@ -20,7 +20,8 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   ```
 
 3. Write a function `fibonacci()`.
-    >The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it. Starting with 0 and 1, the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth. Written as a rule, the expression is xn = xn-1 + xn-2.
+    >The Fibonacci sequence is a series of numbers where a number is found by adding up the two numbers before it.
+    Starting with 0 and 1, the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, and so forth. Written as a rule, the expression is xn = xn-1 + xn-2.
 
   ```js
   console.log(fibonacci(9)) // 21
@@ -143,11 +144,66 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   ], (item, index, array) => [item.isActive])) // { false: [{…}, {…}, {…}], true: [{…}, {…}] }
   ```
 
+  14. Accounting
+    Write an expression using higher-order array methods (say, filter and reduce) to compute the total value of the machines in the inventory array.
+
+    ```js
+    const inventory = [
+      {type:   "machine", value: 5000},
+      {type:   "machine", value:  650},
+      {type:      "duck", value:   10},
+      {type: "furniture", value: 1200},
+      {type:   "machine", value:   77}
+    ]
+
+    let totalMachineValue = your_code
+
+    console.log(totalMachineValue) //5727
+    ```
+
+  15. Sorted array
+    The code for this exercise implements a wrapper for working with sorted arrays.
+    Its constructor takes a comparison function that compares two elements and returns a number,
+    negative if the first is less than the second, zero when they are equal,
+    and positive otherwise (similar to what the sort method on arrays expects).
+
+    Rewrite the code to use an ES6 class. Then, rewrite the loop to use the ES6 array method findIndex,
+    which is like indexOf, but takes a function instead of an element as argument,
+    and returns the index of the first element for which that function returns true (or returns -1 if no such element was found).
+    For example [1, 2, 3].findIndex(x => x > 1) yields 1. Use arrow functions for all function expressions.
+
+    ```js
+      function SortedArray(compare) {
+        this.compare = compare
+        this.content = []
+      }
+
+      SortedArray.prototype.findPos = function(elt) {
+        for (var i = 0; i < this.content.length; i++) {
+          if (this.compare(elt, this.content[i]) < 0) break
+        }
+        return i
+      }
+
+      SortedArray.prototype.insert = function(elt) {
+        this.content.splice(this.findPos(elt), 0, elt)
+      }
+
+      var sorted = new SortedArray(function(a, b) { return a - b })
+      sorted.insert(5)
+      sorted.insert(1)
+      sorted.insert(2)
+      sorted.insert(4)
+      sorted.insert(3)
+      console.log("array:", sorted.content)
+
+    ```
   ---
 
   ## Tasks on DOM
 
-1. Write a function which finds the red bordered node from "structure-1" in "structure-2" (set it the same border) eventually this function should be able to find any mirrored node specified in structure-1
+1. Write a function which finds the red bordered node from "structure-1" in "structure-2" (set it the same border)
+  eventually this function should be able to find any mirrored node specified in structure-1
 
   ```html
     <div id="structure-1">
