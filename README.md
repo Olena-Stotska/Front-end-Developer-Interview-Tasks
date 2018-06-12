@@ -295,73 +295,85 @@ I hope, these tasks help fresh developers prepare to interview and for interview
 
   ## Tasks on ES6
 
-  1. Write a class called Point, which represents a point in two-dimensional space. A point has x and y properties, given
-  as arguments to its constructor. It also has a single method plus, which takes another point and returns the sum of the two points,
-  that is, a new point whose x is the sum of the x properties of the two original points, and whose y is the sum of their y properties.
+1. Write a class called Point, which represents a point in two-dimensional space. A point has x and y properties, given
+as arguments to its constructor. It also has a single method plus, which takes another point and returns the sum of the two points,
+that is, a new point whose x is the sum of the x properties of the two original points, and whose y is the sum of their y properties.
 
-  ```js
-    console.log(new Point(1, 2).plus(new Point(2, 1))) // Point{x: 3, y: 3}
-  ```
+```js
+  console.log(new Point(1, 2).plus(new Point(2, 1))) // Point{x: 3, y: 3}
+```
 
-  2. Speaker upgrade. Rewrite these two object types to use the class keyword, instead of direct prototype manipulation.
-  Speaker is a simple type that exposes a speak method which, when called, logs the given text along with the speaker's name.
-  Shouter is a subtype of Speaker which shouts its text and makes it uppercase.
+2. Speaker upgrade. Rewrite these two object types to use the class keyword, instead of direct prototype manipulation.
+Speaker is a simple type that exposes a speak method which, when called, logs the given text along with the speaker's name.
+Shouter is a subtype of Speaker which shouts its text and makes it uppercase.
 
-  ```js
-    function Speaker(name, verb) {
-      this.name = name
-      this.verb = verb || "says"
-    }
-
-    Speaker.prototype.speak = function(text) {
-      console.log(this.name + " " + this.verb + " '" + text + "'")
-    }
-
-    function Shouter(name) {
-      Speaker.call(this, name, "shouts")
-    }
-
-    Shouter.prototype = Object.create(Speaker.prototype)
-    Shouter.prototype.speak = function(text) {
-      Speaker.prototype.speak.call(this, text.toUpperCase())
-    }
-
-    new Shouter("Dr. Loudmouth").speak("hello there")
-  ```
-
-  3. Getters. The way the verb property is set per instance rather than per class is kind of awkward.
-  Refactor the code to use a getter (get verb() { ... }) instead of an instance property.
-
-  4. Fake point. Use a single object literal to create an object that is indistinguishable from a Point instance, without calling the Point constructor.
-
-  ```js
-    class Point {
-      YOUR_CODE_HERE
-    }
-
-    var fakePoint = YOUR_CODE_HERE
-    console.log(fakePoint instanceof Point)
-  ```
-  5. Singleton. Add a get method to the ids object, which returns the next id and increments its next counter. Use the short method syntax.
-
-  ```js
-    let ids = {
-      next: 0
-    }
-
-    console.log(ids.get()) // 0
-    console.log(ids.get()) // 1
-  ```
-  6. Constant non-constance
-  Does the fact that account is constant mean that we can't update password? Why, or why not? And if not, how could we make it so that we can't?
-
-  ```js
-  const account = {
-    username: "marijn",
-    password: "xyzzy"
+```js
+  function Speaker(name, verb) {
+    this.name = name
+    this.verb = verb || "says"
   }
 
-  account.password = "s3cret" // (*much* more secure)
+  Speaker.prototype.speak = function(text) {
+    console.log(this.name + " " + this.verb + " '" + text + "'")
+  }
 
-  console.log(account.password)
-  ```
+  function Shouter(name) {
+    Speaker.call(this, name, "shouts")
+  }
+
+  Shouter.prototype = Object.create(Speaker.prototype)
+  Shouter.prototype.speak = function(text) {
+    Speaker.prototype.speak.call(this, text.toUpperCase())
+  }
+
+  new Shouter("Dr. Loudmouth").speak("hello there")
+```
+
+3. Getters. The way the verb property is set per instance rather than per class is kind of awkward.
+Refactor the code to use a getter (get verb() { ... }) instead of an instance property.
+
+4. Fake point. Use a single object literal to create an object that is indistinguishable from a Point instance, without calling the Point constructor.
+
+```js
+  class Point {
+    YOUR_CODE_HERE
+  }
+
+  var fakePoint = YOUR_CODE_HERE
+  console.log(fakePoint instanceof Point)
+```
+5. Singleton. Add a get method to the ids object, which returns the next id and increments its next counter. Use the short method syntax.
+
+```js
+  let ids = {
+    next: 0
+  }
+
+  console.log(ids.get()) // 0
+  console.log(ids.get()) // 1
+```
+6. Constant non-constance
+Does the fact that account is constant mean that we can't update password? Why, or why not? And if not, how could we make it so that we can't?
+
+```js
+const account = {
+  username: "marijn",
+  password: "xyzzy"
+}
+
+account.password = "s3cret" // (*much* more secure)
+
+console.log(account.password)
+```
+
+7. Improve this code
+The detectCollision function searches through an array of rectangles and returns the first
+rectangle that the given point is inside of.
+
+Use destructuring and a higher-order function to make this code cleaner.
+You might want to use the new array method find, which takes a function as argument,
+and returns the first element in the array (the element, not its index) for which the function returns true.
+
+```js
+
+```
