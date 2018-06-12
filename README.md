@@ -367,10 +367,11 @@ console.log(account.password)
 ```
 
 7. Improve this code
-The detectCollision function searches through an array of rectangles and returns the first
+
+  The detectCollision function searches through an array of rectangles and returns the first
 rectangle that the given point is inside of.
 
-Use destructuring and a higher-order function to make this code cleaner.
+  Use destructuring and a higher-order function to make this code cleaner.
 You might want to use the new array method find, which takes a function as argument,
 and returns the first element in the array (the element, not its index) for which the function returns true.
 
