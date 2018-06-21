@@ -201,6 +201,20 @@ I hope, these tasks help fresh developers prepare to interview and for interview
   sorted.insert(3)
   console.log("array:", sorted.content)
   ```
+
+  16. 5. Balancing parentheses.
+    Write a function which validate that a supplied string is balanced.
+    Example:
+
+  ```js
+  //  true
+  isBalanced('(aaaa aaa aaa)', '()')
+  isBalanced('(aaa aa[aa ]aa[a a]aaa', '[]')
+  isBalanced('(aaa aa([aa() ])aa[a a]aa()a)', '()[]')
+
+  //  false
+  isBalanced('(aaaa (())aaa aaa))', '()')
+  ```
   ---
 
   ## Tasks on DOM
